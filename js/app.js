@@ -54,7 +54,12 @@ app.controller('TimeSheetController', function($scope) {
     };
   };
 
-  $scope.initAll(new Date());
+  $scope.today = new Date();
+  $scope.initAll($scope.today);
+
+  $scope.now = function() {
+    $scope.initAll($scope.today);
+  };
 
   $scope.next = function() {
     $scope.initAll($scope.data.now.add('month', 1));
