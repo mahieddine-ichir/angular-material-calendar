@@ -1,12 +1,13 @@
 <div layout="column">
 	<div layout="row" layout-align="center center">
 		<md-button flex="20" ng-click="previous()">
+			<md-icon>keyboard_arrow_left</md-icon>
 			{{data.previous.getMonthAsString()}}
 		</md-button>
 
 		<div flex layout="row" layout-align="space-between center">
 			<span class="small">&nbsp;</span>
-			<span>{{data.now.getMonthAsString()}}</span>
+			<span class="bold">{{data.now.getMonthAsString()}}</span>
 			<md-button ng-click="now()">
 				<label class="md-caption">now</label>
 				<md-icon>history</md-icon>
@@ -15,6 +16,7 @@
 
 		<md-button flex="20" ng-click="next()">
 			{{data.next.getMonthAsString()}}
+			<md-icon>keyboard_arrow_right</md-icon>
 		</md-button>
 
 	</div>

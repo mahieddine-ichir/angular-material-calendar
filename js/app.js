@@ -8,7 +8,10 @@ app.config(function($routeProvider, $locationProvider) {
     .otherwise({
       redirectTo: '/timesheet'
     });
-});    
+});
+app.run(function($rootScope) {
+  $rootScope.today = new Date();
+});
 app.controller('TimeSheetController', function($scope) {
   
   $scope.toJson = function(dt) {
