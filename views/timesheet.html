@@ -1,0 +1,37 @@
+<div layout="column">
+	<div layout="row" layout-align="center start">
+		<md-button flex="20" ng-click="previous()">
+			{{data.previous.getMonthAsString()}}
+		</md-button>
+		<md-button class="md-raised" flex>
+			{{data.now.getMonthAsString()}}
+		</md-button>
+		<md-button flex="20" ng-click="next()">
+			{{data.next.getMonthAsString()}}
+		</md-button>
+	</div>
+
+<!--<md-subheader flex>3 line item (with hover)</md-subheader>-->
+  	<md-list flex>  	
+  	<md-subheader>
+  	<div layout="row">
+  	<md-list-item ng-repeat="j in [0, 1, 2, 3, 4, 5, 6]" flex='20'>
+  		<md-subheader>
+			{{data.days[j].day}}
+  		</md-subheader>
+  	</md-list-item>
+  	</div>
+  	</md-subheader>
+  	
+
+  	<div layout="row" ng-repeat="i in [0, 1, 2, 3, 4]">
+  	<md-list-item ng-repeat="j in [0, 1, 2, 3, 4, 5, 6]" flex='20'>
+		<md-button ng-show="data.days[7*i+j]" ng-disabled="!working(data.days[j])">
+			{{data.days[7*i+j].d}}
+		</md-button>
+  	</md-list-item>
+	</div>
+
+  	</md-list>  	
+
+</div>
